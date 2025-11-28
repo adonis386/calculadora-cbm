@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cálculo CBM y ft³</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculadora de Volumen</h1>
+            <p class="subtitle">Metros Cúbicos (CBM) y Pies Cúbicos (ft³)</p>
+        </header>
+
+        <div class="calculator-grid">
+            <!-- Calculadora CBM -->
+            <div class="calculator-card">
+                <h2>Calculadora CBM</h2>
+                <p class="unit-label">Metros Cúbicos</p>
+                <div class="input-group">
+                    <label for="cbm-length">Largo (m):</label>
+                    <input type="number" id="cbm-length" step="0.01" placeholder="0.00">
+                </div>
+                <div class="input-group">
+                    <label for="cbm-width">Ancho (m):</label>
+                    <input type="number" id="cbm-width" step="0.01" placeholder="0.00">
+                </div>
+                <div class="input-group">
+                    <label for="cbm-height">Alto (m):</label>
+                    <input type="number" id="cbm-height" step="0.01" placeholder="0.00">
+                </div>
+                <button onclick="calculateCBM()" class="btn btn-primary">Calcular CBM</button>
+                <div class="result" id="cbm-result">
+                    <span class="result-label">Resultado:</span>
+                    <span class="result-value" id="cbm-value">-</span>
+                    <span class="result-unit">CBM</span>
+                </div>
+            </div>
+
+            <!-- Calculadora ft³ -->
+            <div class="calculator-card">
+                <h2>Calculadora ft³</h2>
+                <p class="unit-label">Pies Cúbicos</p>
+                <div class="input-group">
+                    <label for="ft3-length">Largo (ft):</label>
+                    <input type="number" id="ft3-length" step="0.01" placeholder="0.00">
+                </div>
+                <div class="input-group">
+                    <label for="ft3-width">Ancho (ft):</label>
+                    <input type="number" id="ft3-width" step="0.01" placeholder="0.00">
+                </div>
+                <div class="input-group">
+                    <label for="ft3-height">Alto (ft):</label>
+                    <input type="number" id="ft3-height" step="0.01" placeholder="0.00">
+                </div>
+                <button onclick="calculateFT3()" class="btn btn-primary">Calcular ft³</button>
+                <div class="result" id="ft3-result">
+                    <span class="result-label">Resultado:</span>
+                    <span class="result-value" id="ft3-value">-</span>
+                    <span class="result-unit">ft³</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conversor -->
+        <div class="converter-card">
+            <h2>Conversor de Unidades</h2>
+            <div class="converter-grid">
+                <div class="converter-input">
+                    <label for="convert-from">De:</label>
+                    <input type="number" id="convert-from" step="0.01" placeholder="0.00">
+                    <select id="from-unit">
+                        <option value="cbm">CBM</option>
+                        <option value="ft3">ft³</option>
+                    </select>
+                </div>
+                <div class="converter-arrow">→</div>
+                <div class="converter-output">
+                    <label for="convert-to">A:</label>
+                    <input type="number" id="convert-to" step="0.01" placeholder="0.00" readonly>
+                    <select id="to-unit">
+                        <option value="ft3">ft³</option>
+                        <option value="cbm">CBM</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="convertUnits()" class="btn btn-secondary">Convertir</button>
+        </div>
+
+        <!-- Información -->
+        <div class="info-card">
+            <h3>Información</h3>
+            <ul>
+                <li><strong>CBM</strong> = Metros Cúbicos (m³)</li>
+                <li><strong>ft³</strong> = Pies Cúbicos (cubic feet)</li>
+                <li>ft³ = (alto × largo × ancho) / 28320</li>
+                <li>CBM = ft³ / 35.31</li>
+                <li>1 CBM = 35.31 ft³</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
