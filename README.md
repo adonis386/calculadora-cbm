@@ -17,10 +17,9 @@ Sistema web para calcular metros cúbicos (CBM) y pies cúbicos (ft³) con conve
 
 ## Fórmulas
 
-- **CBM** = Largo (m) × Ancho (m) × Alto (m)
-- **ft³** = Largo (ft) × Ancho (ft) × Alto (ft)
-- **1 CBM** = 35.3147 ft³
-- **1 ft³** = 0.0283168 CBM
+- **ft³** = (alto × largo × ancho) / 28320
+- **CBM** = ft³ / 35.31
+- **1 CBM** = 35.31 ft³
 
 ## Archivos
 
@@ -33,4 +32,3 @@ Sistema web para calcular metros cúbicos (CBM) y pies cúbicos (ft³) con conve
 - HTML5
 - CSS3
 - JavaScript (Vanilla)
-
